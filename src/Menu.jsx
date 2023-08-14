@@ -18,7 +18,7 @@ const Menu = () =>{
                     <NavLink className={({isActive}) => isActive ? "nav-link isActive" : "nav-link"} to="/subrutasmarvel">Sub Rutas Marvel</NavLink>
                     </li>
                     <li className="nav-item">
-                    <NavLink className={({isActive}) => isActive ? "nav-link isActive" : "nav-link"} to="/apimarvel">Api Marvel</NavLink>
+                    <NavLink className={({isActive}) => isActive ? "nav-link isActive" : "nav-link"} to="/api-marvel">Api Marvel</NavLink>
                     </li>
                     <li className="nav-item">
                     <NavLink className={({isActive}) => isActive ? "nav-link isActive" : "nav-link"} to="/carruselmarvel">Carrusel Marvel</NavLink>

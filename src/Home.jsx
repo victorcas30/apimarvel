@@ -14,7 +14,7 @@ const Home = () => {
                 <div className="card-body">
                     <h5 className="card-title">Proyecto 1</h5>
                     <p className="card-text">Api Marvel.</p>
-                    <Link to="/apimarvel" className="btn btn-dark">Ver más</Link>
+                    <Link to="/api-marvel" className="btn btn-dark">Ver más</Link>
                 </div>
                 </div>
             </div>

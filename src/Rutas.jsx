@@ -19,7 +19,7 @@ const Rutas = () => {
             <Route path="/subrutasmarvel/*" element={<SubRutasMarvel/>}>
                 <Route path="cardmarvelsubruta/:id" element={<CardMarvelSubRuta/>} />
             </Route>
-            <Route path="/apimarvel" element={<ApiMarvel/>} />
+            <Route path="/api-marvel" element={<ApiMarvel/>} />
             <Route path="/carruselmarvel" element={<ApiMarvelCarrusel/>} />
             <Route path="/acerca" element={<Acerca/>} />
             <Route path="/loading" element={<Loading/>} />
