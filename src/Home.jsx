@@ -34,7 +34,7 @@ const Home = () => {
                 <div className="card-body">
                     <h5 className="card-title">Proyecto 3</h5>
                     <p className="card-text">Tarjetas.</p>
-                    <Link to="/" className="btn btn-dark">Ver más</Link>
+                    <Link to="/carruselmarvel" className="btn btn-dark">Ver más</Link>
                 </div>
                 </div>
             </div>
