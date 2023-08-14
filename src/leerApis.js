@@ -1,14 +1,15 @@
-const getAllPersonajesRickAndMorty = async() => {
+const getAllPersonajesMarvel = async(nombrePersonaje) => {
     try {
-        const getAllPersonajes = await fetch("https://rickandmortyapi.com/api/character")
-        const {results} = await getAllPersonajes.json();
+        const getAllPersonajes = await fetch(`https://gateway.marvel.com/v1/public/characters?apikey=f19709d93d497312d9214a95fdd52a5d&hash=64652737b0a9cad28464c984a45714e3&ts=1000&nameStartsWith=${nombrePersonaje}`)
+        const {data} = await getAllPersonajes.json();
+        const {results} = data;
         return results;
     } catch (error) {
         throw new Error("A ocurrido un error");
     }
 }
 
-const getAllPersonajesMarvel = async(nombrePersonaje) => {
+const getAllPersonajesMarvel1 = async(nombrePersonaje) => {
     try {
         const getAllPersonajes = await fetch(`https://gateway.marvel.com/v1/public/characters?apikey=f19709d93d497312d9214a95fdd52a5d&hash=64652737b0a9cad28464c984a45714e3&ts=1000&nameStartsWith=${nombrePersonaje}`)
         const {data} = await getAllPersonajes.json();
@@ -21,7 +22,7 @@ const getAllPersonajesMarvel = async(nombrePersonaje) => {
 
 const getAllMarvel = async() => {
     try {
-        const getAllPersonajes = await fetch(`https://gateway.marvel.com/v1/public/characters?apikey=f19709d93d497312d9214a95fdd52a5d&hash=64652737b0a9cad28464c984a45714e3&ts=1000&nameStartsWith=spider`)
+        const getAllPersonajes = await fetch(`https://gateway.marvel.com/v1/public/characters?apikey=f19709d93d497312d9214a95fdd52a5d&hash=64652737b0a9cad28464c984a45714e3&ts=1000&nameStartsWith=hulk`)
         const {data} = await getAllPersonajes.json();
         const {results} = data;
         return results;
@@ -51,4 +52,4 @@ const getPersonajeMarvel = async(id) => {
     }
 }
 
-export {getAllPersonajesRickAndMorty,getAllPersonajesMarvel,getPersonajeRickAndMorty,getPersonajeMarvel,getAllMarvel}
+export {getAllPersonajesMarvel,getPersonajeRickAndMorty,getPersonajeMarvel,getAllMarvel, getAllPersonajesMarvel1}

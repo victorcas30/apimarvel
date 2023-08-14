@@ -2,7 +2,7 @@ import "./style.css"
 import useCarrusel from "./useCarrusel";
 import Carrusel from "./Carrusel";
 import useApiMarvel from "./useApiMarvel";
-import { getPersonajeMarvel } from "./leerApis";
+import { getAllMarvel } from "./leerApis";
 import { useEffect } from "react";
 
 
@@ -13,14 +13,18 @@ const ApiMarvelCarrusel = () => {
 
 
     useEffect(() => {
-        getPersonajeMarvel(num).then(personajeM => {
-            setPersonaje(personajeM);
-        })
-    },[num])
+        getAllMarvel().then(allCharacters => {
+            if (allCharacters && allCharacters.length > 0) {
+                const selectedCharacter = allCharacters[num];
+                setPersonaje(selectedCharacter);
+                console.log(selectedCharacter);
+            }
+        });
+    }, [num]);
 
     return(
         <>
-        <Carrusel key={num} rick={personaje} incrementar={incrementar} decrementar={decrementar} num={num} />
+        <Carrusel key={num} marvel={personaje} incrementar={incrementar} decrementar={decrementar} num={num} />
         </>
     )
 

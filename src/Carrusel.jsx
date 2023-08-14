@@ -2,24 +2,28 @@ import "./style.css";
 import useCarrusel from "./useCarrusel";
 
 const Carrusel = props => {
-    const {id,name,status,species,image,gender} = props.rick;
+    const {id,name,thumbnail} = props.marvel;
+    let image = '';
+    if (thumbnail) {
+        const { path, extension } = thumbnail;
+        image = `${path}.${extension}`;
+    }
     const {incrementar,decrementar,num} = props;
 
     return(
         <>
+        <div className="container">
+
         <h1 className="display-4">Carrusel Marvel </h1>
         <hr/>
+        <h4>{`${id} - ${name} - ${num}`}</h4>
         <div className="d-flex justify-content-center align-items-center">
         <div id="carouselExampleCaptions" className="carousel slide carruselSize">
         <div className="carousel-inner">
             <div className="carousel-item active">
-            <img src={image} className="d-block w-100" alt="..."/>
+            {thumbnail && <img src={image} className="d-block w-100" alt="..."/>}
             <div className="carousel-caption d-none d-md-block cajaCarrusel">
-                <h4>{`${id} - ${name}`}</h4>
-                <p>Estato: {status} {status==="Alive" ? "🟢" : (status==="Dead" ? "🔴" : (status==="unknown" ? "⬛" : "🤍"))} 
-                 {" "}Especie: {species} {species==="Human" ? "😎" : "👽"}
-                 {" "}Genero: {gender} {gender==="Male" ? "🚹" : "🚺" }
-                </p>
+                <h4>{`${id} - ${name} - ${num}`}</h4>
             </div>
             </div>
         </div>
@@ -31,6 +35,7 @@ const Carrusel = props => {
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
         </button>
+        </div>
         </div>
         </div>
 
